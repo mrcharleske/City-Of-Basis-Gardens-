@@ -160,15 +160,17 @@
 
         .mobile-nav {
             position: fixed;
-            top: 0;
+            top: 80px;
             left: -100%;
             width: 100%;
-            height: 100vh;
+            height: auto;
+            max-height: 70%;
             background: rgba(44, 44, 44, 0.98);
             backdrop-filter: blur(20px);
             z-index: 999;
             transition: left 0.3s ease;
-            padding-top: 80px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .mobile-nav.active {
@@ -200,9 +202,9 @@
             padding-left: 1rem;
         }
 
-        /* Hero Section with Video Background */
+        /* Hero Section */
         .hero {
-            height: 100vh;
+            height: 100%;
             position: relative;
             display: flex;
             align-items: center;
@@ -286,6 +288,7 @@
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin: 0.5rem;
         }
 
         .cta-button:hover {
@@ -336,10 +339,45 @@
             margin-top: 2rem;
         }
 
-        /* Properties Section */
-        .properties-section {
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.4s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Quick Preview Section */
+        .preview-section {
             padding: 8rem 0;
-            background: white;
+            background: linear-gradient(135deg, var(--cream-white), #f9f9f9);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            color: var(--deep-bronze);
+            margin-bottom: 3rem;
+            font-family: 'Playfair Display', serif;
         }
 
         .section-subtitle {
@@ -352,130 +390,46 @@
             margin-right: auto;
         }
 
-        .properties-grid {
+        .preview-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
             margin: 4rem 0;
         }
 
-        .property-card {
+        .preview-card {
             background: white;
             border-radius: 20px;
-            overflow: hidden;
+            padding: 3rem 2rem;
+            text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
-            position: relative;
             border: 1px solid #f0f0f0;
         }
 
-        .property-card:hover {
+        .preview-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 25px 60px rgba(0,0,0,0.15);
         }
 
-        .property-card.featured {
-            border: 2px solid var(--primary-gold);
+        .preview-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
         }
 
-        .property-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: linear-gradient(135deg, var(--primary-gold), var(--warm-amber));
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            z-index: 2;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .property-image {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .property-card:hover .property-image {
-            transform: scale(1.05);
-        }
-
-        .property-image-placeholder {
-            width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, var(--warm-amber), var(--primary-gold));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            text-align: center;
-            font-size: 0.9rem;
-            padding: 2rem;
-        }
-
-        .property-content {
-            padding: 2rem;
-        }
-
-        .property-location {
-            color: var(--primary-gold);
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-
-        .property-card h3 {
+        .preview-card h3 {
             color: var(--deep-bronze);
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
-        .property-card p {
+        .preview-card p {
             color: #666;
-            font-size: 1rem;
             line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .property-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
             margin-bottom: 2rem;
         }
 
-        .property-features span {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--deep-bronze);
-            padding: 0.4rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .property-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid #f0f0f0;
-        }
-
-        .property-price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--deep-bronze);
-            font-family: 'Playfair Display', serif;
-        }
-
-        .property-book-btn {
+        .preview-link {
             background: linear-gradient(135deg, var(--primary-gold), var(--warm-amber));
             color: white;
             padding: 0.8rem 1.5rem;
@@ -488,239 +442,9 @@
             letter-spacing: 1px;
         }
 
-        .property-book-btn:hover {
+        .preview-link:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Features Section */
-        .features-section {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, var(--cream-white), #f9f9f9);
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3.5rem;
-            color: var(--deep-bronze);
-            margin-bottom: 3rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin: 4rem 0;
-        }
-
-        .feature-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
-        }
-
-        .feature-image {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .feature-card:hover .feature-image {
-            transform: scale(1.05);
-        }
-
-        .feature-image-placeholder {
-            width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, var(--warm-amber), var(--primary-gold));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            text-align: center;
-            font-size: 1rem;
-            padding: 2rem;
-        }
-
-        .feature-content {
-            padding: 2.5rem;
-        }
-
-        .feature-card h3 {
-            color: var(--deep-bronze);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        .feature-card p {
-            color: #666;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        /* Locations Section */
-        .locations-section {
-            padding: 8rem 0;
-            background: var(--charcoal);
-            color: white;
-        }
-
-        .locations-section .section-title {
-            color: white;
-        }
-
-        .locations-section .section-subtitle {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .locations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin: 4rem 0;
-        }
-
-        .location-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
-        }
-
-        .location-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--primary-gold);
-        }
-
-        .location-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .location-card h3 {
-            color: var(--primary-gold);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-
-        .location-card p {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .location-stats {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .location-stats span {
-            background: rgba(212, 175, 55, 0.2);
-            color: var(--primary-gold);
-            padding: 0.5rem 1rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* Services Section */
-        .services-section {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, var(--cream-white), #f9f9f9);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin: 4rem 0;
-        }
-
-        .service-item {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.4s ease;
-            border: 1px solid #f0f0f0;
-        }
-
-        .service-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            border-color: var(--primary-gold);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-item h4 {
-            color: var(--deep-bronze);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .service-item p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Quick Stats Section */
-        .stats-section {
-            padding: 6rem 0;
-            background: var(--charcoal);
-            color: white;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            margin: 3rem 0;
-        }
-
-        .stat-item {
-            padding: 2rem;
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            color: var(--primary-gold);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .stat-label {
-            font-size: 1.2rem;
-            opacity: 0.9;
         }
 
         /* CTA Section */
@@ -731,18 +455,6 @@
             color: white;
             position: relative;
             overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('/assets/cta-background.jpg') center/cover;
-            opacity: 0.2;
-            z-index: 1;
         }
 
         .cta-section-placeholder {
@@ -797,27 +509,6 @@
             margin-top: 3rem;
         }
 
-        .whatsapp-button {
-            background: #25D366;
-            color: white;
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            transition: all 0.4s ease;
-            font-weight: 600;
-            font-size: 1.1rem;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-        }
-
-        .whatsapp-button:hover {
-            background: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
-        }
-
         .secondary-button {
             background: rgba(255, 255, 255, 0.2);
             color: white;
@@ -840,160 +531,251 @@
             border-color: rgba(255, 255, 255, 0.5);
         }
 
-        /* Booking Form Section */
-        .booking-form-section {
+        /* Featured Properties Section */
+        .featured-section {
             padding: 8rem 0;
-            background: linear-gradient(135deg, var(--cream-white), #f9f9f9);
+            background: white;
         }
 
-        .booking-form-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .featured-card {
             background: white;
             border-radius: 20px;
-            padding: 4rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid #f0f0f0;
         }
 
-        .form-group {
-            margin-bottom: 2rem;
+        .featured-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.8rem;
-            color: var(--deep-bronze);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1.2rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: #fafafa;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary-gold);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-button {
-            width: 100%;
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
             background: linear-gradient(135deg, var(--primary-gold), var(--warm-amber));
             color: white;
-            padding: 1.5rem;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.4s ease;
+            z-index: 2;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        .featured-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
         }
 
-        .submit-button:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
+        .featured-card:hover .featured-image {
+            transform: scale(1.05);
         }
 
-        .form-divider {
+        .featured-image-placeholder {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--warm-amber), var(--primary-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
             text-align: center;
-            margin: 3rem 0;
-            position: relative;
+            font-size: 0.9rem;
+            padding: 2rem;
         }
 
-        .form-divider::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: #e0e0e0;
+        .featured-content {
+            padding: 2rem;
         }
 
-        .form-divider span {
-            background: white;
-            padding: 0 2rem;
+        .featured-location {
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-card h3 {
+            color: var(--deep-bronze);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .featured-card p {
             color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .featured-features span {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--deep-bronze);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
             font-weight: 500;
         }
 
-        .quick-contact {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(212, 175, 55, 0.05);
-            border-radius: 15px;
-            margin-top: 2rem;
+        .featured-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #f0f0f0;
         }
 
-        .quick-contact h4 {
+        .featured-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--deep-bronze);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .featured-book-btn {
+            background: linear-gradient(135deg, var(--primary-gold), var(--warm-amber));
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .featured-book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-section {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--cream-white), #f9f9f9);
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .why-choose-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .why-choose-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border-color: var(--primary-gold);
+        }
+
+        .why-choose-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .why-choose-card h4 {
             color: var(--deep-bronze);
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
 
-        .contact-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .why-choose-card p {
+            color: #666;
+            line-height: 1.6;
         }
 
-        /* About Section */
-        .about-section {
+        /* Quick Stats Section */
+        .stats-section {
+            padding: 6rem 0;
+            background: var(--charcoal);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            color: var(--primary-gold);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* About Preview Section */
+        .about-preview-section {
             padding: 8rem 0;
             background: white;
         }
 
-        .about-content {
+        .about-preview-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 6rem;
             align-items: center;
         }
 
-        .about-description {
+        .about-preview-description {
             font-size: 1.1rem;
             line-height: 1.8;
             color: #666;
             margin-bottom: 2rem;
         }
 
-        .about-features {
+        .about-preview-features {
             margin-top: 3rem;
         }
 
-        .about-feature {
+        .about-preview-feature {
             display: flex;
             align-items: center;
             gap: 1rem;
@@ -1014,13 +796,13 @@
             font-weight: bold;
         }
 
-        .about-image img {
+        .about-preview-image img {
             width: 100%;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
         }
 
-        .about-image-placeholder {
+        .about-preview-image-placeholder {
             width: 100%;
             height: 400px;
             background: linear-gradient(135deg, var(--warm-amber), var(--primary-gold));
@@ -1033,95 +815,6 @@
             text-align: center;
             font-size: 1rem;
             padding: 2rem;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, var(--cream-white), #f9f9f9);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            margin-top: 4rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-        }
-
-        .contact-item {
-            display: flex;
-            gap: 1.5rem;
-            align-items: flex-start;
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            background: rgba(212, 175, 55, 0.1);
-            padding: 1rem;
-            border-radius: 15px;
-            min-width: 60px;
-            text-align: center;
-        }
-
-        .contact-details h4 {
-            color: var(--deep-bronze);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .contact-details p {
-            color: #333;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-
-        .contact-details small {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .contact-buttons {
-            margin-top: 2rem;
-            gap: 1rem;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-        }
-
-        .contact-form h3 {
-            color: var(--deep-bronze);
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-        }
-
-        .call-button {
-            background: #007bff;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            transition: all 0.4s ease;
-            font-weight: 600;
-            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-        }
-
-        .call-button:hover {
-            background: #0056b3;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
         }
 
         /* Responsive Design */
@@ -1146,12 +839,8 @@
                 display: flex;
             }
             
-            .features-grid {
+            .preview-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
             }
             
             .price-highlight {
@@ -1167,45 +856,6 @@
                 font-size: 2.5rem;
             }
 
-            .booking-form-container {
-                padding: 2rem;
-                margin: 0 1rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-buttons {
-                flex-direction: column;
-            }
-
-            .properties-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .locations-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .contact-form {
-                padding: 2rem;
-            }
-
             .hero-stats {
                 gap: 1.5rem;
             }
@@ -1218,6 +868,23 @@
             .hero-stat .stat-number {
                 font-size: 1.8rem;
             }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-preview-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1229,12 +896,8 @@
                 font-size: 2.2rem;
             }
             
-            .feature-content {
-                padding: 1.5rem;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
+            .preview-card {
+                padding: 2rem 1.5rem;
             }
         }
     </style>
@@ -1244,14 +907,15 @@
  </head>
  <body><!-- Fixed Navigation -->
   <nav class="navbar">
-   <div class="nav-container"><a href="#home" class="logo" id="company-name">Oasis Gardens Properties</a>
+   <div class="nav-container"><a href="index.html" class="logo" id="company-name">Oasis Gardens Properties</a>
     <ul class="nav-links">
-     <li><a href="#properties">Our Properties</a></li>
-     <li><a href="#locations">Locations</a></li>
-     <li><a href="#services">Services</a></li>
-     <li><a href="#about">About Us</a></li>
-     <li><a href="#contact">Contact</a></li>
-     <li><a href="#booking" class="nav-cta">Book Now</a></li>
+     <li><a href="index.html">Home</a></li>
+     <li><a href="properties.html">Our Properties</a></li>
+     <li><a href="locations.html">Locations</a></li>
+     <li><a href="services.html">Services</a></li>
+     <li><a href="about.html">About Us</a></li>
+     <li><a href="contact.html">Contact</a></li>
+     <li><a href="booking.html" class="nav-cta">Book Now</a></li>
     </ul>
     <div class="mobile-menu-toggle" onclick="toggleMobileMenu()"><span></span> <span></span> <span></span>
     </div>
@@ -1259,16 +923,16 @@
   </nav><!-- Mobile Navigation -->
   <div class="mobile-nav" id="mobileNav">
    <ul class="mobile-nav-links">
-    <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
-    <li><a href="#properties" onclick="closeMobileMenu()">Our Properties</a></li>
-    <li><a href="#locations" onclick="closeMobileMenu()">Locations</a></li>
-    <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
-    <li><a href="#about" onclick="closeMobileMenu()">About Us</a></li>
-    <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
-    <li><a href="#booking" onclick="closeMobileMenu()">Book Now</a></li>
+    <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+    <li><a href="properties.html" onclick="closeMobileMenu()">Our Properties</a></li>
+    <li><a href="locations.html" onclick="closeMobileMenu()">Locations</a></li>
+    <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+    <li><a href="about.html" onclick="closeMobileMenu()">About Us</a></li>
+    <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+    <li><a href="booking.html" onclick="closeMobileMenu()">Book Now</a></li>
    </ul>
-  </div><!-- Hero Section with Video Background -->
-  <section id="home" class="hero">
+  </div><!-- Hero Section -->
+  <section class="hero">
    <div class="hero-video-container">
     <video class="hero-video" autoplay muted loop poster="/assets/hero-poster.jpg"><source src="/assets/hero-video.mp4" type="video/mp4">
      <div class="hero-video-placeholder">
@@ -1290,217 +954,144 @@
      <div class="hero-stat"><span class="stat-number">5★</span> <span class="stat-label">Rated</span>
      </div>
     </div>
-    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000"><a href="#properties" class="cta-button"> View Properties </a> <a href="#" id="hero-whatsapp" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000"><a href="properties.html" class="cta-button"> View Properties </a> <a href="#" id="hero-whatsapp" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
       <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
       </svg> WhatsApp Us </a>
     </div>
    </div>
-  </section><!-- Properties Showcase Section -->
-  <section id="properties" class="properties-section">
+  </section><!-- Quick Preview Section -->
+  <section class="preview-section">
    <div class="container">
-    <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Our Premium Properties</h2>
-    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Carefully curated luxury Airbnb properties across Nairobi's most desirable neighborhoods</p>
-    <div class="properties-grid">
-     <div class="property-card featured" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-      <div class="property-badge">
-       Featured
-      </div><img src="/assets/property-kilimani.jpg" alt="Kilimani Luxury Villa" class="property-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="property-image-placeholder" style="display: none;">
-       🏨 PROPERTY-KILIMANI.JPG<br><br>
+    <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Explore Our Services</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Everything you need for the perfect Nairobi stay</p>
+    <div class="preview-grid">
+     <div class="preview-card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+      <div class="preview-icon">
+       🏨
+      </div>
+      <h3>Premium Properties</h3>
+      <p>Discover our collection of luxury Airbnb properties across Nairobi's most desirable neighborhoods.</p><a href="properties.html" class="preview-link">View Properties</a>
+     </div>
+     <div class="preview-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+      <div class="preview-icon">
+       📍
+      </div>
+      <h3>Prime Locations</h3>
+      <p>Strategically located in Kilimani, Westlands, and Karen for maximum convenience and comfort.</p><a href="locations.html" class="preview-link">Explore Locations</a>
+     </div>
+     <div class="preview-card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+      <div class="preview-icon">
+       🛡️
+      </div>
+      <h3>Professional Services</h3>
+      <p>24/7 support, housekeeping, security, and concierge services for a worry-free experience.</p><a href="services.html" class="preview-link">Our Services</a>
+     </div>
+    </div>
+   </div>
+  </section><!-- Featured Properties Section -->
+  <section class="featured-section">
+   <div class="container">
+    <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Featured Properties</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Handpicked luxury accommodations for discerning travelers</p>
+    <div class="featured-grid">
+     <div class="featured-card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+      <div class="featured-badge">
+       Most Popular
+      </div><img src="/assets/featured-kilimani.jpg" alt="Kilimani Luxury Villa" class="featured-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="featured-image-placeholder" style="display: none;">
+       🏨 FEATURED-KILIMANI.JPG<br><br>
         Luxury villa with infinity pool<br>
         Modern architecture, city views<br>
         Golden hour lighting<br><br><strong>1200×800px</strong>
       </div>
-      <div class="property-content">
-       <div class="property-location">
+      <div class="featured-content">
+       <div class="featured-location">
         Kilimani
        </div>
        <h3>City Oasis Villa</h3>
        <p>3BR luxury villa with infinity pool, gym, and stunning city views. Walk to Westfield Mall.</p>
-       <div class="property-features"><span>🏊 Pool</span> <span>🏋️ Gym</span> <span>🛡️ Security</span> <span>🅿️ Parking</span>
+       <div class="featured-features"><span>🏊 Pool</span> <span>🏋️ Gym</span> <span>🛡️ Security</span> <span>🅿️ Parking</span>
        </div>
-       <div class="property-footer">
-        <div class="property-price">
+       <div class="featured-footer">
+        <div class="featured-price">
          From $54/night
-        </div><a href="#booking" class="property-book-btn">Book Now</a>
+        </div><a href="booking.html" class="featured-book-btn">Book Now</a>
        </div>
       </div>
      </div>
-     <div class="property-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"><img src="/assets/property-westlands.jpg" alt="Westlands Executive Apartment" class="property-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="property-image-placeholder" style="display: none;">
-       🏢 PROPERTY-WESTLANDS.JPG<br><br>
+     <div class="featured-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"><img src="/assets/featured-westlands.jpg" alt="Westlands Executive Apartment" class="featured-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="featured-image-placeholder" style="display: none;">
+       🏢 FEATURED-WESTLANDS.JPG<br><br>
         Modern executive apartment<br>
         High-rise with panoramic views<br>
         Professional photography<br><br><strong>1200×800px</strong>
       </div>
-      <div class="property-content">
-       <div class="property-location">
+      <div class="featured-content">
+       <div class="featured-location">
         Westlands
        </div>
        <h3>Executive Heights</h3>
        <p>2BR executive apartment in the heart of Westlands business district. Premium amenities.</p>
-       <div class="property-features"><span>🌆 City Views</span> <span>🏢 Business District</span> <span>🚗 Valet</span> <span>📶 High-Speed WiFi</span>
+       <div class="featured-features"><span>🌆 City Views</span> <span>🏢 Business District</span> <span>🚗 Valet</span> <span>📶 High-Speed WiFi</span>
        </div>
-       <div class="property-footer">
-        <div class="property-price">
+       <div class="featured-footer">
+        <div class="featured-price">
          From $65/night
-        </div><a href="#booking" class="property-book-btn">Book Now</a>
-       </div>
-      </div>
-     </div>
-     <div class="property-card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800"><img src="/assets/property-karen.jpg" alt="Karen Garden Retreat" class="property-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="property-image-placeholder" style="display: none;">
-       🌿 PROPERTY-KAREN.JPG<br><br>
-        Serene garden retreat<br>
-        Lush greenery, peaceful setting<br>
-        Natural lighting, tranquil<br><br><strong>1200×800px</strong>
-      </div>
-      <div class="property-content">
-       <div class="property-location">
-        Karen
-       </div>
-       <h3>Garden Retreat</h3>
-       <p>4BR family home in serene Karen. Perfect for families, with garden and outdoor entertainment.</p>
-       <div class="property-features"><span>🌳 Garden</span> <span>👨‍👩‍👧‍👦 Family-Friendly</span> <span>🔥 BBQ Area</span> <span>🐕 Pet-Friendly</span>
-       </div>
-       <div class="property-footer">
-        <div class="property-price">
-         From $75/night
-        </div><a href="#booking" class="property-book-btn">Book Now</a>
+        </div><a href="booking.html" class="featured-book-btn">Book Now</a>
        </div>
       </div>
      </div>
     </div>
-    <div style="text-align: center; margin-top: 4rem;"><a href="#contact" class="cta-button" data-aos="fade-up" data-aos-duration="800"> View All Properties </a>
+    <div style="text-align: center; margin-top: 4rem;"><a href="properties.html" class="cta-button" data-aos="fade-up" data-aos-duration="800"> View All Properties </a>
     </div>
    </div>
-  </section><!-- Features Section -->
-  <section class="features-section">
+  </section><!-- Why Choose Us Section -->
+  <section class="why-choose-section">
    <div class="container">
     <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Why Choose Oasis Gardens Properties?</h2>
-    <div class="features-grid">
-     <div class="feature-card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"><img src="/assets/feature-pool.jpg" alt="Infinity Pool with City Views" class="feature-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="feature-image-placeholder" style="display: none;">
-       🏊 FEATURE-POOL.JPG<br><br>
-        Infinity pool at golden hour<br>
-        Crystal clear water reflecting sunset<br>
-        City skyline in background<br><br><strong>1200×800px</strong>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Experience the difference with our professional Airbnb management</p>
+    <div class="why-choose-grid">
+     <div class="why-choose-card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+      <div class="why-choose-icon">
+       🏆
       </div>
-      <div class="feature-content">
-       <h3>Private Infinity Pool</h3>
-       <p>Dive into luxury with our stunning infinity pool featuring underwater LED lighting and panoramic city views. Perfect for morning laps or evening relaxation under the Nairobi stars.</p>
-      </div>
+      <h4>Award-Winning Service</h4>
+      <p>Consistently rated 4.9★ by guests for exceptional hospitality and attention to detail.</p>
      </div>
-     <div class="feature-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"><img src="/assets/feature-location.jpg" alt="Prime Kilimani Location" class="feature-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="feature-image-placeholder" style="display: none;">
-       📍 FEATURE-LOCATION.JPG<br><br>
-        Aerial view: villa + Westfield Mall<br>
-        Shows proximity to shopping center<br>
-        Urban convenience meets luxury<br><br><strong>1200×800px</strong>
+     <div class="why-choose-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+      <div class="why-choose-icon">
+       🔒
       </div>
-      <div class="feature-content">
-       <h3>Prime Kilimani Location</h3>
-       <p>Just 2 minutes walk to Westfield Mall and 10 minutes to Nairobi CBD. Experience the perfect blend of urban convenience and peaceful luxury living.</p>
-      </div>
+      <h4>Premium Security</h4>
+      <p>24/7 professional security, biometric access, and comprehensive CCTV coverage.</p>
      </div>
-     <div class="feature-card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800"><img src="/assets/feature-security.jpg" alt="24/7 Security &amp; Biometric Access" class="feature-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="feature-image-placeholder" style="display: none;">
-       🔒 FEATURE-SECURITY.JPG<br><br>
-        Modern biometric scanner<br>
-        Professional security setup<br>
-        Safety and peace of mind<br><br><strong>1200×800px</strong>
-      </div>
-      <div class="feature-content">
-       <h3>Premium Security</h3>
-       <p>Sleep peacefully with our advanced biometric access control, 24/7 professional security guards, and comprehensive CCTV coverage throughout the property.</p>
-      </div>
-     </div>
-    </div>
-    <div style="text-align: center; margin-top: 4rem;"><a href="#contact" class="cta-button" data-aos="fade-up" data-aos-duration="800"> Contact Our Team </a>
-    </div>
-   </div>
-  </section><!-- Locations Section -->
-  <section id="locations" class="locations-section">
-   <div class="container">
-    <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Prime Nairobi Locations</h2>
-    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Strategically located properties in Nairobi's most sought-after neighborhoods</p>
-    <div class="locations-grid">
-     <div class="location-card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-      <div class="location-icon">
-       🏙️
-      </div>
-      <h3>Kilimani</h3>
-      <p>Heart of the city with easy access to Westfield Mall, restaurants, and business districts. Perfect for business travelers and city explorers.</p>
-      <div class="location-stats"><span>5 Properties</span> <span>2 min to Mall</span> <span>10 min to CBD</span>
-      </div>
-     </div>
-     <div class="location-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-      <div class="location-icon">
-       🏢
-      </div>
-      <h3>Westlands</h3>
-      <p>Premier business district with corporate offices, international hotels, and upscale dining. Ideal for executives and business meetings.</p>
-      <div class="location-stats"><span>4 Properties</span> <span>Business Hub</span> <span>Premium Area</span>
-      </div>
-     </div>
-     <div class="location-card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-      <div class="location-icon">
-       🌿
-      </div>
-      <h3>Karen</h3>
-      <p>Serene suburban area known for its leafy environment and family-friendly atmosphere. Perfect for longer stays and family vacations.</p>
-      <div class="location-stats"><span>3 Properties</span> <span>Family-Friendly</span> <span>Peaceful Setting</span>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- Services Section -->
-  <section id="services" class="services-section">
-   <div class="container">
-    <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Professional Airbnb Management</h2>
-    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">We handle everything so you can focus on enjoying your stay</p>
-    <div class="services-grid">
-     <div class="service-item" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-      <div class="service-icon">
-       🛡️
-      </div>
-      <h4>24/7 Security &amp; Support</h4>
-      <p>Round-the-clock security, emergency support, and guest assistance for complete peace of mind.</p>
-     </div>
-     <div class="service-item" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-      <div class="service-icon">
+     <div class="why-choose-card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+      <div class="why-choose-icon">
        🧹
       </div>
-      <h4>Professional Housekeeping</h4>
-      <p>Daily cleaning services, fresh linens, and maintenance to ensure pristine conditions throughout your stay.</p>
+      <h4>Spotless Standards</h4>
+      <p>Professional housekeeping with hospital-grade sanitization and fresh linens daily.</p>
      </div>
-     <div class="service-item" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-      <div class="service-icon">
+     <div class="why-choose-card" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+      <div class="why-choose-icon">
+       📞
+      </div>
+      <h4>24/7 Support</h4>
+      <p>Round-the-clock guest support via WhatsApp, phone, and on-site assistance.</p>
+     </div>
+     <div class="why-choose-card" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
+      <div class="why-choose-icon">
        🚗
       </div>
       <h4>Concierge Services</h4>
-      <p>Airport transfers, local recommendations, restaurant bookings, and personalized assistance for all your needs.</p>
+      <p>Airport transfers, restaurant bookings, and personalized local recommendations.</p>
      </div>
-     <div class="service-item" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
-      <div class="service-icon">
-       📱
+     <div class="why-choose-card" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+      <div class="why-choose-icon">
+       💰
       </div>
-      <h4>Smart Check-in</h4>
-      <p>Contactless check-in with digital keys, property guides, and instant communication channels.</p>
-     </div>
-     <div class="service-item" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
-      <div class="service-icon">
-       🍽️
-      </div>
-      <h4>Local Experiences</h4>
-      <p>Curated local experiences, restaurant partnerships, and insider access to Nairobi's best attractions.</p>
-     </div>
-     <div class="service-item" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
-      <div class="service-icon">
-       💼
-      </div>
-      <h4>Business Amenities</h4>
-      <p>High-speed WiFi, workspace setups, printing services, and meeting room access for business travelers.</p>
+      <h4>Best Value Guarantee</h4>
+      <p>Competitive pricing with no hidden fees. What you see is what you pay.</p>
      </div>
     </div>
    </div>
@@ -1543,127 +1134,31 @@
      </div>
     </div>
    </div>
-  </section><!-- About Section -->
-  <section id="about" class="about-section">
+  </section><!-- About Preview Section -->
+  <section class="about-preview-section">
    <div class="container">
-    <div class="about-content">
-     <div class="about-text" data-aos="fade-right" data-aos-duration="1000">
+    <div class="about-preview-content">
+     <div class="about-preview-text" data-aos="fade-right" data-aos-duration="1000">
       <h2 class="section-title" style="text-align: left;">About Oasis Gardens Properties</h2>
-      <p class="about-description">We are Nairobi's premier Airbnb management company, specializing in luxury short-term rentals across the city's most desirable neighborhoods. With over <span id="about-units">12+</span> carefully curated properties, we provide exceptional hospitality experiences for business travelers, tourists, and locals seeking premium accommodations.</p>
-      <p class="about-description">Our professional team ensures every property meets the highest standards of cleanliness, security, and comfort. From 24/7 support to personalized concierge services, we go above and beyond to make every stay memorable.</p>
-      <div class="about-features">
-       <div class="about-feature"><span class="feature-icon">✓</span> <span>Professional property management</span>
+      <p class="about-preview-description">We are Nairobi's premier Airbnb management company, specializing in luxury short-term rentals across the city's most desirable neighborhoods. With over <span id="about-units">12+</span> carefully curated properties, we provide exceptional hospitality experiences.</p>
+      <p class="about-preview-description">Our professional team ensures every property meets the highest standards of cleanliness, security, and comfort. From 24/7 support to personalized concierge services, we go above and beyond to make every stay memorable.</p>
+      <div class="about-preview-features">
+       <div class="about-preview-feature"><span class="feature-icon">✓</span> <span>Professional property management since 2020</span>
        </div>
-       <div class="about-feature"><span class="feature-icon">✓</span> <span>24/7 guest support and security</span>
+       <div class="about-preview-feature"><span class="feature-icon">✓</span> <span>24/7 guest support and security</span>
        </div>
-       <div class="about-feature"><span class="feature-icon">✓</span> <span>Premium locations across Nairobi</span>
+       <div class="about-preview-feature"><span class="feature-icon">✓</span> <span>Premium locations across Nairobi</span>
        </div>
-       <div class="about-feature"><span class="feature-icon">✓</span> <span>Verified 4.9★ guest satisfaction</span>
+       <div class="about-preview-feature"><span class="feature-icon">✓</span> <span>Verified 4.9★ guest satisfaction</span>
        </div>
-      </div>
+      </div><a href="about.html" class="cta-button" style="margin-top: 2rem;">Learn More About Us</a>
      </div>
-     <div class="about-image" data-aos="fade-left" data-aos-duration="1000"><img src="/assets/about-team.jpg" alt="Oasis Gardens Properties Team" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="about-image-placeholder" style="display: none;">
+     <div class="about-preview-image" data-aos="fade-left" data-aos-duration="1000"><img src="/assets/about-team.jpg" alt="Oasis Gardens Properties Team" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="about-preview-image-placeholder" style="display: none;">
        👥 ABOUT-TEAM.JPG<br><br>
         Professional team photo<br>
         Modern office or property setting<br>
         Friendly, approachable staff<br><br><strong>800×600px</strong>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- Contact Section -->
-  <section id="contact" class="contact-section">
-   <div class="container">
-    <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Get In Touch</h2>
-    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Ready to book or have questions? Our team is here to help 24/7</p>
-    <div class="contact-grid">
-     <div class="contact-info" data-aos="fade-right" data-aos-duration="1000">
-      <div class="contact-item">
-       <div class="contact-icon">
-        📱
-       </div>
-       <div class="contact-details">
-        <h4>WhatsApp &amp; Phone</h4>
-        <p id="contact-phone">+254 726 714 765</p><small>Available 24/7 for bookings and support</small>
-       </div>
-      </div>
-      <div class="contact-item">
-       <div class="contact-icon">
-        ✉️
-       </div>
-       <div class="contact-details">
-        <h4>Email</h4>
-        <p id="contact-email">info@oasisgardens.co.ke</p><small>We respond within 2 hours</small>
-       </div>
-      </div>
-      <div class="contact-item">
-       <div class="contact-icon">
-        📍
-       </div>
-       <div class="contact-details">
-        <h4>Office Location</h4>
-        <p>Kilimani, Nairobi</p><small>Visit by appointment</small>
-       </div>
-      </div>
-      <div class="contact-buttons"><a href="#" id="contact-whatsapp" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
-        <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
-        </svg> WhatsApp Us </a> <a href="#" id="contact-call" class="call-button">
-        <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-        </svg> Call Now </a>
-      </div>
-     </div>
-     <div class="contact-form" data-aos="fade-left" data-aos-duration="1000">
-      <h3>Send us a message</h3>
-      <form id="contactForm" onsubmit="handleContactSubmit(event)">
-       <div class="form-group"><label for="contactName">Your Name</label> <input type="text" id="contactName" name="name" required>
-       </div>
-       <div class="form-group"><label for="contactEmail">Email Address</label> <input type="email" id="contactEmail" name="email" required>
-       </div>
-       <div class="form-group"><label for="contactSubject">Subject</label> <select id="contactSubject" name="subject" required> <option value="">Select a topic</option> <option value="booking">Property Booking</option> <option value="inquiry">General Inquiry</option> <option value="support">Guest Support</option> <option value="partnership">Partnership</option> </select>
-       </div>
-       <div class="form-group"><label for="contactMessage">Message</label> <textarea id="contactMessage" name="message" rows="5" required></textarea>
-       </div><button type="submit" class="submit-button" id="contactSubmitBtn"> Send Message </button>
-      </form>
-     </div>
-    </div>
-   </div>
-  </section><!-- Booking Form Section -->
-  <section id="booking" class="booking-form-section">
-   <div class="container">
-    <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Book Your Stay</h2>
-    <div class="booking-form-container" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-     <form id="bookingForm" onsubmit="handleBookingSubmit(event)">
-      <div class="form-row">
-       <div class="form-group"><label for="checkIn">Check-in Date</label> <input type="date" id="checkIn" name="checkIn" required>
-       </div>
-       <div class="form-group"><label for="checkOut">Check-out Date</label> <input type="date" id="checkOut" name="checkOut" required>
-       </div>
-      </div>
-      <div class="form-row">
-       <div class="form-group"><label for="guests">Number of Guests</label> <select id="guests" name="guests" required> <option value="">Select guests</option> <option value="1">1 Guest</option> <option value="2">2 Guests</option> <option value="3">3 Guests</option> <option value="4">4 Guests</option> <option value="5">5 Guests</option> <option value="6">6 Guests</option> </select>
-       </div>
-       <div class="form-group"><label for="name">Full Name</label> <input type="text" id="name" name="name" placeholder="Your full name" required>
-       </div>
-      </div>
-      <div class="form-row">
-       <div class="form-group"><label for="email">Email Address</label> <input type="email" id="email" name="email" placeholder="your@email.com" required>
-       </div>
-       <div class="form-group"><label for="phone">Phone Number</label> <input type="tel" id="phone" name="phone" placeholder="+254 700 000 000" required>
-       </div>
-      </div>
-      <div class="form-group"><label for="message">Special Requests (Optional)</label> <textarea id="message" name="message" placeholder="Any special requests or questions about your stay..."></textarea>
-      </div><button type="submit" class="submit-button" id="submitBtn"> Send Booking Request </button>
-     </form>
-     <div class="form-divider"><span>Or contact us directly</span>
-     </div>
-     <div class="quick-contact">
-      <h4>Prefer to talk? We're here to help!</h4>
-      <div class="contact-buttons"><a href="#" id="call-link" class="call-button">
-        <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-        </svg> Call Now </a> <a href="#" id="whatsapp-link-2" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
-        <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
-        </svg> WhatsApp </a>
       </div>
      </div>
     </div>
@@ -1678,13 +1173,13 @@
    </div>
    <div class="cta-content">
     <h2 data-aos="fade-up" data-aos-duration="1000">Ready for Your Nairobi Escape?</h2>
-    <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Experience luxury living in the heart of Kilimani</p>
+    <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Experience luxury living in the heart of Nairobi</p>
     <div class="price-highlight" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="800">
-     Starting at <span id="price-display-2">$54</span>/night
+     Starting at $45/night
     </div>
     <div class="button-group" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800"><a href="#" id="whatsapp-link" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
       <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
-      </svg> WhatsApp <span id="phone-display">+254 726 714 765</span> </a> <a href="#booking-form" class="secondary-button" onclick="scrollToBookingForm()">
+      </svg> WhatsApp <span id="phone-display">+254 726 714 765</span> </a> <a href="booking.html" class="secondary-button">
       <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
       </svg> Book Online </a>
     </div>
@@ -1699,18 +1194,6 @@
                 once: true,
                 offset: 120,
                 delay: 100
-            });
-
-            // Set minimum date for check-in to today
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('checkIn').setAttribute('min', today);
-            
-            // Update check-out minimum date when check-in changes
-            document.getElementById('checkIn').addEventListener('change', function() {
-                const checkInDate = new Date(this.value);
-                checkInDate.setDate(checkInDate.getDate() + 1);
-                const minCheckOut = checkInDate.toISOString().split('T')[0];
-                document.getElementById('checkOut').setAttribute('min', minCheckOut);
             });
         });
 
@@ -1729,186 +1212,6 @@
             
             mobileNav.classList.remove('active');
             toggle.classList.remove('active');
-        }
-
-        // Scroll to booking form
-        function scrollToBookingForm() {
-            const bookingSection = document.querySelector('.booking-form-section');
-            const navHeight = document.querySelector('.navbar').offsetHeight;
-            const elementPosition = bookingSection.offsetTop - navHeight;
-            
-            window.scrollTo({
-                top: elementPosition,
-                behavior: 'smooth'
-            });
-        }
-
-        // Handle booking form submission
-        function handleBookingSubmit(event) {
-            event.preventDefault();
-            
-            const submitBtn = document.getElementById('submitBtn');
-            const formData = new FormData(event.target);
-            
-            // Disable button and show loading state
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending Request...';
-            
-            // Get form data
-            const bookingData = {
-                checkIn: formData.get('checkIn'),
-                checkOut: formData.get('checkOut'),
-                guests: formData.get('guests'),
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                message: formData.get('message') || 'No special requests'
-            };
-            
-            // Calculate nights
-            const checkInDate = new Date(bookingData.checkIn);
-            const checkOutDate = new Date(bookingData.checkOut);
-            const nights = Math.ceil((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24));
-            
-            // Create WhatsApp message
-            const companyName = document.getElementById('company-name').textContent;
-            const whatsappMessage = `🏨 *BOOKING REQUEST - ${companyName}*
-
-📅 *Check-in:* ${new Date(bookingData.checkIn).toLocaleDateString()}
-📅 *Check-out:* ${new Date(bookingData.checkOut).toLocaleDateString()}
-🛏️ *Nights:* ${nights}
-👥 *Guests:* ${bookingData.guests}
-
-👤 *Guest Details:*
-Name: ${bookingData.name}
-Email: ${bookingData.email}
-Phone: ${bookingData.phone}
-
-💬 *Special Requests:*
-${bookingData.message}
-
-Please confirm availability and send booking details. Thank you!`;
-            
-            // Simulate form processing
-            setTimeout(() => {
-                // Get phone number and create WhatsApp link
-                const phoneNumber = (document.getElementById('phone-display').textContent || '+254726714765').replace(/\D/g, '');
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-                
-                // Open WhatsApp
-                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-                
-                // Reset form
-                event.target.reset();
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Booking Request';
-                
-                // Show success message
-                showSuccessMessage();
-            }, 1500);
-        }
-
-        // Handle contact form submission
-        function handleContactSubmit(event) {
-            event.preventDefault();
-            
-            const submitBtn = document.getElementById('contactSubmitBtn');
-            const formData = new FormData(event.target);
-            
-            // Disable button and show loading state
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending Message...';
-            
-            // Get form data
-            const contactData = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                subject: formData.get('subject'),
-                message: formData.get('message')
-            };
-            
-            // Create WhatsApp message
-            const companyName = document.getElementById('company-name').textContent;
-            const whatsappMessage = `📧 *CONTACT MESSAGE - ${companyName}*
-
-👤 *From:* ${contactData.name}
-📧 *Email:* ${contactData.email}
-📋 *Subject:* ${contactData.subject}
-
-💬 *Message:*
-${contactData.message}
-
-Please respond at your earliest convenience. Thank you!`;
-            
-            // Simulate form processing
-            setTimeout(() => {
-                // Get phone number and create WhatsApp link
-                const phoneNumber = (document.getElementById('contact-phone').textContent || '+254726714765').replace(/\D/g, '');
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-                
-                // Open WhatsApp
-                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-                
-                // Reset form
-                event.target.reset();
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-                
-                // Show success message
-                showContactSuccessMessage();
-            }, 1500);
-        }
-
-        function showContactSuccessMessage() {
-            // Create and show success message
-            const successDiv = document.createElement('div');
-            successDiv.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 20px;
-                background: linear-gradient(135deg, #28a745, #20c997);
-                color: white;
-                padding: 1rem 2rem;
-                border-radius: 10px;
-                box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);
-                z-index: 10000;
-                font-weight: 600;
-                animation: slideIn 0.3s ease;
-            `;
-            successDiv.innerHTML = '✅ Message sent! WhatsApp is opening...';
-            
-            document.body.appendChild(successDiv);
-            
-            // Remove message after 4 seconds
-            setTimeout(() => {
-                successDiv.remove();
-            }, 4000);
-        }
-
-        function showSuccessMessage() {
-            // Create and show success message
-            const successDiv = document.createElement('div');
-            successDiv.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 20px;
-                background: linear-gradient(135deg, #28a745, #20c997);
-                color: white;
-                padding: 1rem 2rem;
-                border-radius: 10px;
-                box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);
-                z-index: 10000;
-                font-weight: 600;
-                animation: slideIn 0.3s ease;
-            `;
-            successDiv.innerHTML = '✅ Booking request sent! WhatsApp is opening...';
-            
-            document.body.appendChild(successDiv);
-            
-            // Remove message after 4 seconds
-            setTimeout(() => {
-                successDiv.remove();
-            }, 4000);
         }
 
         // Navbar scroll effect
@@ -1969,28 +1272,10 @@ Please respond at your earliest convenience. Thank you!`;
                 phoneEl.textContent = config.phone_number || defaultConfig.phone_number;
             }
 
-            const contactPhoneEl = document.getElementById('contact-phone');
-            if (contactPhoneEl) {
-                contactPhoneEl.textContent = config.phone_number || defaultConfig.phone_number;
-            }
-
-            // Update email display
-            const contactEmailEl = document.getElementById('contact-email');
-            if (contactEmailEl) {
-                contactEmailEl.textContent = config.email || defaultConfig.email;
-            }
-
             // Update WhatsApp links
             const whatsappLinks = [
                 document.getElementById('whatsapp-link'),
-                document.getElementById('whatsapp-link-2'),
-                document.getElementById('hero-whatsapp'),
-                document.getElementById('contact-whatsapp')
-            ];
-            
-            const callLinks = [
-                document.getElementById('call-link'),
-                document.getElementById('contact-call')
+                document.getElementById('hero-whatsapp')
             ];
             
             whatsappLinks.forEach(link => {
@@ -1999,13 +1284,6 @@ Please respond at your earliest convenience. Thank you!`;
                     const companyName = config.company_name || defaultConfig.company_name;
                     const message = `Hi! I'm interested in booking with ${companyName}. Can you help me with availability and pricing for your properties?`;
                     link.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-                }
-            });
-
-            callLinks.forEach(link => {
-                if (link) {
-                    const phone = config.phone_number || defaultConfig.phone_number;
-                    link.href = `tel:${phone}`;
                 }
             });
         }
@@ -2048,5 +1326,5 @@ Please respond at your earliest convenience. Thank you!`;
             }
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99edd58591858a6a',t:'MTc2MzIwMDExOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99edf33591f18a6a',t:'MTc2MzIwMTMzNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
